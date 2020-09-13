@@ -1,0 +1,6 @@
+docker run -d \
+-p 6379:6379 \
+-v /etc/redis/redis.conf:/etc/redis/redis.conf \
+--privileged=true \
+--name redis_server \
+redis
