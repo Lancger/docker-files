@@ -1,4 +1,4 @@
-# docker-files
+# 一、docker-files
 
 ```bash
 # 构建镜像
@@ -16,6 +16,10 @@ docker logs -f --tail=30 tomcat
 
 ```bash
 docker pull viptime/tomcat8:base
+```
 
+# 三、基于基础镜像封装
 
+```bash
+wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 ```
