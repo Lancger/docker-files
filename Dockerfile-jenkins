@@ -1,0 +1,20 @@
+#基于基础镜像封装成jenkins镜像
+FROM viptime/tomcat8:base
+
+#镜像维护者信息
+MAINTAINER Lancger@qq.com
+
+#这个环境变量用来表名该镜像模板的最后更新时间
+ENV REFRESHED_AT 2020-09-13
+
+#切换镜像目录，进入/usr目录
+WORKDIR /usr/local/
+
+#下载jenkins.war包
+ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /usr/local/apache-tomcat-8.5.57/webapps/
+
+#公开端口
+EXPOSE 8080
+
+#设置启动命令
+ENTRYPOINT ["/usr/local/apache-tomcat-8.5.57/bin/catalina.sh", "run"]
