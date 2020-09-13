@@ -1,0 +1,5 @@
+docker run -p 8090:80 --name nginx_web \
+-v /etc/nginx:/etc/nginx \
+-v /data/docker/nginx/logs:/var/log/nginx \
+--privileged=true \
+-d nginx:latest
