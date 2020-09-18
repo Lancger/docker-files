@@ -1,4 +1,5 @@
-```bash
+# 1、nginx配置文件
+
 cat >/etc/nginx/nginx.conf<<\EOF
 user  nginx;
 worker_processes  1;
@@ -32,11 +33,16 @@ http {
     include /etc/nginx/conf.d/*.conf;
 }
 EOF
-```
 
+# 2、静态资源
 
-docker run -p 8090:80 --name nginx_web \
+mkdir -p /usr/share/nginx/html/
+
+# 3、运行服务
+
+docker run -p 80:80 --name nginx_web \
 -v /etc/nginx:/etc/nginx \
--v /data/docker/nginx/logs:/var/log/nginx \
+-v /var/log/nginx:/var/log/nginx \
+-v /usr/share/nginx:/usr/share/nginx \
 --privileged=true \
 -d nginx:latest
