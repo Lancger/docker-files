@@ -46,3 +46,7 @@ docker run -p 80:80 --name nginx_web \
 -v /usr/share/nginx:/usr/share/nginx \
 --privileged=true \
 -d nginx:latest
+
+# 查看日志
+
+docker logs -f --tail=30 nginx_web
