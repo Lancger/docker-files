@@ -16,6 +16,9 @@ docker logs -f --tail=30 tomcat
 
 ```bash
 docker pull viptime/tomcat8:base
+
+推送镜像
+docker push docker.io/viptime/tomcat8-4g:base
 ```
 
 # 三、基于基础镜像封装
