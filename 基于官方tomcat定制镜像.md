@@ -58,7 +58,7 @@ EOF
 ```
 # 构建镜像
 docker build -t tomcat_base:v1 -f dockerfile .
-docker build -t viptime/tomcat8:jenkins -f ./Dockerfile-jenkins .
+docker build -t viptime/tomcat8_4g:base -f dockerfile .
 
 # 挂载配置目录启动容器
 docker run -d -p 8080:8080 --name tomcat8 \
