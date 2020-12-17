@@ -1,5 +1,25 @@
 # 一、docker-files
 
+注意有大文件，需要使用git-lfs
+
+```bash
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+
+yum install git-lfs -y
+
+git lfs install
+git lfs track "jdk-8u251-linux-x64.tar.gz"
+git add .gitattributes
+git add *
+git commit -m "大文件上传"
+git push
+
+git push origin master 
+
+https://www.jianshu.com/p/3f25cd20e392  Github如何上传超过100M的大文件
+https://github.com/Lancger/opslinux
+```
+
 ```bash
 # 构建镜像
 docker build -t tomcat_base_4g:v1 -f ./Dockerfile-java-4g .
