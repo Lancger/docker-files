@@ -64,7 +64,7 @@ docker build -t viptime/tomcat8_base_4g:v1 -f dockerfile .
 docker run -d -p 8080:8080 --name tomcat8 \
     -v /data1/docker/tomcat/logs:/usr/local/tomcat/logs \
     -v /data1/docker/tomcat/webapps:/usr/local/tomcat/webapps \
-    tomcat_base:v1
+    tomcat8_base_4g:v1
     
 # 进入容器
 docker exec -it tomcat8 /bin/bash
