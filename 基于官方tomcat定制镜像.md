@@ -88,3 +88,11 @@ docker login
 # 推送镜像
 docker push docker.io/viptime/tomcat8_base_4g:v1
 ```
+
+参考资料：
+
+https://www.coder.work/article/41481  docker - Docker将warfile添加到官方Tomcat镜像
+
+https://yeasy.gitbook.io/docker_practice/image/build  使用 Dockerfile 定制镜像
+
+https://segmentfault.com/a/1190000038340170 12个docker常用命令！以tomcat为例
