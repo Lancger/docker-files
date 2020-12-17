@@ -133,6 +133,8 @@ EOF
 
 chmod +x start.sh
 ./start.sh
+
+docker logs -f --tail=30 tomcat8_websocket_8068
 ```
 
 参考资料：
