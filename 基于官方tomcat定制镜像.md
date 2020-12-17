@@ -1,4 +1,4 @@
-# dockerfile定制tomcat镜像
+# 一、dockerfile定制tomcat镜像
 
 ## 1、命令行运行
 
@@ -58,6 +58,7 @@ EOF
 ```
 # 构建镜像
 docker build -t tomcat_base:v1 -f dockerfile .
+docker build -t viptime/tomcat8:jenkins -f ./Dockerfile-jenkins .
 
 # 挂载配置目录启动容器
 docker run -d -p 8080:8080 --name tomcat8 \
@@ -77,11 +78,13 @@ docker rm -f $(docker ps -aq)
 
 ### c、推送镜像
 
+# 二、推送到 hub.docker.com
+
 ```
 # 镜像打标签
-docker tag tomcat_base:v1 docker.io/viptime/tomcat8-4g:base
+docker tag tomcat_base:v1 viptime/tomcat8-4g:base
 
-# 登录hub.docker.com
+# 登录 hub.docker.com
 docker login
 
 # 推送镜像
