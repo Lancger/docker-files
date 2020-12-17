@@ -11,7 +11,7 @@ ENV REFRESHED_AT 2020-09-13
 WORKDIR /usr/local/
 
 #将宿主机的jdk文件添加到镜像中，ADD会帮我们解压到/usr/local/src目录下
-ADD apache-tomcat-8.5.57.tar.gz /usr/local
+ADD apache-tomcat-8.5.57.tar.gz /usr/local/src/
 
 #将宿主机的jdk文件添加到镜像中，ADD会帮我们解压到/usr/local/src目录下
 ADD jdk-8u251-linux-x64.tar.gz /usr/local/src/
