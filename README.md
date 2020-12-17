@@ -3,6 +3,7 @@
 ```bash
 # 构建镜像
 docker build -t tomcat_base_4g:v1 -f ./Dockerfile-java-4g .
+docker build -t viptime/tomcat_base_4g:v1 -f ./Dockerfile-java-4g .
 
 # 把build的镜像run起来：
 docker run -itd --name tomcat -p 8080:8080 tomcat_base_4g:v1
@@ -15,6 +16,7 @@ docker logs -f --tail=30 tomcat
 # 二、从hub.docker.com拉取镜像修改
 
 ```bash
+拉取镜像
 docker pull viptime/tomcat_base_4g:v1
 
 推送镜像
