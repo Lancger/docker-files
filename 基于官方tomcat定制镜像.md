@@ -76,8 +76,6 @@ docker logs -f --tail=30 tomcat8_console_8080
 docker rm -f $(docker ps -aq)
 ```
 
-### c、推送镜像
-
 # 二、推送到 hub.docker.com
 
 ```
