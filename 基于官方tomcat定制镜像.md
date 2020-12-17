@@ -1,4 +1,4 @@
-# 一、dockerfile定制tomcat镜像
+# dockerfile定制tomcat镜像
 
 ## 1、命令行运行
 
@@ -80,6 +80,9 @@ docker rm -f $(docker ps -aq)
 ```
 # 镜像打标签
 docker tag tomcat_base:v1 docker.io/viptime/tomcat8-4g:base
+
+# 登录hub.docker.com
+docker login
 
 # 推送镜像
 docker push docker.io/viptime/tomcat8-4g:base
