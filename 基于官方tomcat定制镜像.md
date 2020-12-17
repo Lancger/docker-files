@@ -92,8 +92,6 @@ docker push docker.io/viptime/tomcat8_base_4g:v1
 # 三、将自定义war添加到官方Tomcat镜像
 
 ```bash
-official
-
 cat >dockerfile_official<<\EOF
 #在这里用tomcat:8.5作为tomcat的基础镜像
 FROM tomcat:8.5
@@ -125,6 +123,16 @@ EOF
 docker build -t viptime/tomcat8_official_4g:v1 -f dockerfile_official .
 
 docker push docker.io/viptime/tomcat8_official_4g:v1
+```
+
+```bash
+cat >start.sh<<\EOF
+#!/bin/bash
+docker run -itd --name tomcat8_websocket_8068 --restart=always -v /opt/:/opt/ -v /data0/opt/tomcat8_websocket/logs/:/data0/opt/tomcat8_websocket/logs/ -p 8068:8080 viptime/tomcat8_official_4g:v1
+EOF
+
+chmod +x start.sh
+./start.sh
 ```
 
 参考资料：
